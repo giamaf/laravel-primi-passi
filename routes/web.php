@@ -20,12 +20,12 @@ Route::get('/home', function () {
     $contatti = 'Contatti';
     $about = 'About Us';
 
+    $home_links = [ $scopri, $contatti, $about];
+
     //! Creo l'array nel quale inserisco le variabili da mandare giù
     $data = [
-                'home' => $label_home,
-                'scopri' => $scopri,
-                'contatti' => $contatti,
-                'about' => $about
+                'label_home' => $label_home,
+                'links' => $home_links,
     ];
 
     //* La funzione accetta come primo parametro la stringa senza .blade.php e come secondo parametro i dati da mandare giù (ARRAY ASSOCIATIVO)
@@ -33,7 +33,7 @@ Route::get('/home', function () {
     return view('home', $data);
 })->name('home');
 
-Route::get('/scopri', function () {
+Route::get('/home/scopri', function () {
 
     $label_home = 'Home';
     $scopri = 'Scopri di più';
@@ -45,7 +45,7 @@ Route::get('/scopri', function () {
     return view('scopri', $data);
 })->name('scopri');
 
-Route::get('/contatti', function () {
+Route::get('/home/contatti', function () {
 
     $label_home = 'Home';
     $contatti = 'Contatti';
@@ -57,7 +57,7 @@ Route::get('/contatti', function () {
     return view('contatti', $data);
 })->name('contatti');
 
-Route::get('/about', function () {
+Route::get('/home/about', function () {
 
     $label_home = 'Home';
     $about = 'About Us';
