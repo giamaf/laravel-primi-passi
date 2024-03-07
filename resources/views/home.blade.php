@@ -11,8 +11,8 @@
 
     <h1>Questa è la {{ $label_home }}</h1>
 
-    @foreach ($links as $link)
-        <a href="{{ route('scopri') }}">
+    @foreach ($links as $key => $link)
+        <a href="{{ route($key) }}">
             <span style="padding: 0px 10px">{{ $link }}</span>
         </a>
     @endforeach

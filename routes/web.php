@@ -20,7 +20,11 @@ Route::get('/home', function () {
     $contatti = 'Contatti';
     $about = 'About Us';
 
-    $home_links = [ $scopri, $contatti, $about];
+    $home_links = [ 
+                    'scopri' => $scopri, 
+                    'contatti' => $contatti, 
+                    'about' => $about
+                 ];
 
     //! Creo l'array nel quale inserisco le variabili da mandare giù
     $data = [
